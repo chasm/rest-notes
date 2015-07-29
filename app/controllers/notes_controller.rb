@@ -37,7 +37,7 @@ get '/notes/:id/edit' do
   erb :"/notes/edit"
 end
 
-# NON-GET route redirect to GET routes
+# NON-GET routes redirect to GET routes
 
 # CREATE
 post '/notes' do
