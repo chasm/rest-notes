@@ -7,7 +7,7 @@ configure :development do
 end
 
 get '/' do
-  self.inspect
+  redirect '/notes'
 end
 
 # GET routes return HTML
