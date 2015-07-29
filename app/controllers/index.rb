@@ -1,7 +1,7 @@
 require 'glorify'
 
 get '/' do
-  redirect '/notes'
+  erb :index
 end
 
 # GET routes return HTML
@@ -10,13 +10,13 @@ end
 get '/notes' do
   @notes = Note.order :created_at
   @title = "REST Notes"
-  erb :index
+  erb :"/notes/index"
 end
 
 # NEW (form)
 get '/notes/new' do
   @title = "Add note :: REST Notes"
-  erb :new
+  erb :"/notes/new"
 end
 
 # SHOW
@@ -30,7 +30,7 @@ get '/notes/:id' do
   @prev = idx == 0 ? nil : notes[idx - 1]
   @next = idx == (notes.length - 1) ? nil : notes[idx + 1]
 
-  erb :show
+  erb :"/notes/show"
 end
 
 # EDIT (form)
@@ -38,7 +38,7 @@ get '/notes/:id/edit' do
   @note = Note.find params[:id]
   @title = "Edit note :: REST Notes"
 
-  erb :edit
+  erb :"/notes/edit"
 end
 
 # NON-GET route redirect to GET routes
