@@ -22,6 +22,8 @@ gem 'shotgun'
 
 gem 'glorify'
 
+gem 'bcrypt'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
