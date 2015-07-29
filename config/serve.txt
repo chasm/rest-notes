@@ -1,0 +1,3 @@
+unicorn -c /var/www/rest-notes/unicorn.rb -E development -D -p 3010
+
+cat /var/www/rest-notes/tmp/pids/unicorn.pid | xargs kill -QUIT

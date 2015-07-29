@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="pull-right">
+      <a href="/notes" class="btn btn-info btn-sm">List</a>
+      <span class="btn btn-primary btn-sm disabled">Add</span>
+      <span class="btn btn-default btn-sm disabled">Show</span>
+      <span class="btn btn-default btn-sm disabled">Edit</span>
+      <span class="btn btn-default btn-sm disabled">Delete</span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form method="post" action="/notes">
+      <fieldset>
+        <legend>Add a REST note!</legend>
+        <div class="form-group">
+          <label for="intent" class="sr-only">Intent</label>
+          <input type="text" id="intent" name="note[intent]"
+            placeholder="Add an intent" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="explanation" class="sr-only">Explanation</label>
+          <textarea id="explanation" name="note[explanation]"
+            placeholder="Add an explanation" value=""
+            class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="response" class="sr-only">Response</label>
+          <input type="text" id="response" name="note[response]"
+            placeholder="Add a response" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Create the note" class="btn btn-warning">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

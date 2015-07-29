@@ -1,2 +1,2 @@
-# rest-notes
-Playing with Sinatra and REST
+# note-maker
+Playing with Sinatra and REST.

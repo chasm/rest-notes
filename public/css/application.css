@@ -1,0 +1,39 @@
+main.container {
+  margin-top: 4rem;
+}
+
+h1 {
+  color: #5cb85c;
+  font-size: 2.4rem;
+}
+
+h2 {
+  color: #472181;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+caption {
+  font-size: 32px;
+  line-height: 48px;
+}
+
+caption img {
+  vertical-align: text-top;
+}
+
+form.delete-button,
+form.delete-button input {
+  display: inline;
+}
+
+th.note-title,
+th.note-controls {
+  width: 18.4rem;
+}
+
+.siblings a:hover,
+.siblings a:active,
+.siblings a:focus {
+  text-decoration: none;
+}
