@@ -7,6 +7,7 @@ gem 'rack'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-partial'
 
 # Use Thin for our web server
 gem 'thin'
