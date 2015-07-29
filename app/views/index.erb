@@ -1,1 +1,30 @@
-<p>Home page</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <header class="site-header">
+      <div class="slogan pull-right">Give it a REST!</div>
+      <h1>REST Notes</h1>
+    </header>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form method="post" action="/sessions">
+      <fieldset>
+        <legend>Please sign in!</legend>
+        <div class="form-group">
+          <label for="email" class="sr-only">Email address</label>
+          <input type="text" id="email" name="sessions[email]"
+            placeholder="Your email address" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password" class="sr-only">Password</label>
+          <input type="text" id="password" name="sessions[password]"
+            placeholder="Your password" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Sign in" class="btn btn-warning">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

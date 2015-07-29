@@ -2,6 +2,17 @@ main.container {
   margin-top: 4rem;
 }
 
+.site-header {
+  margin: 20px auto;
+}
+
+.slogan {
+  color: #0c3d1b;
+  font-size: 1.6rem;
+  font-style: italic;
+  line-height: 3.2rem;
+}
+
 h1 {
   color: #5cb85c;
   font-size: 2.4rem;
