@@ -15,9 +15,6 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
-require 'better_errors'
-require 'binding_of_caller'
-
 require 'sinatra'
 require "sinatra/reloader" if development?
 
