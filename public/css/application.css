@@ -9,6 +9,24 @@ img.logo {
   vertical-align: text-middle;
 }
 
+span.signout {
+  color: #9d9d9d;
+  cursor: pointer;
+  display: block;
+  line-height: 20px;
+  padding: 15px;
+  position: relative;
+}
+
+.active span.page {
+  color: #fff;
+  cursor: default;
+  display: block;
+  line-height: 20px;
+  padding: 15px;
+  position: relative;
+}
+
 .site-header {
   margin: 20px auto;
 }

@@ -10,12 +10,14 @@ end
 get '/notes' do
   @notes = Note.order :created_at
   @title = "REST Notes"
+
   erb :"/notes/index"
 end
 
 # NEW (form)
 get '/notes/new' do
   @title = "Add note :: REST Notes"
+
   erb :"/notes/new"
 end
 

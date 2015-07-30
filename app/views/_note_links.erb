@@ -1,0 +1,34 @@
+          <ul class="nav navbar-nav">
+            <% if @notes %>
+              <li class="active"><span class="page">List</span></li>
+            <% else %>
+              <li><a href="/notes">List</a></li>
+            <% end %>
+            <% unless @notes or @note %>
+              <li class="active"><span class="page">Add</span></li>
+            <% else %>
+              <li><a href="/notes/new">Add</a></li>
+            <% end %>
+            <% if @note %>
+              <% if @prev or @next %>
+                <li class="active"><span class="page">Show</span></li>
+                <li><a href="/notes/<%= @note.id %>/edit">Edit</a></li>
+              <% else %>
+                <li><a href="/notes/<%= @note.id %>">Show</a></li>
+                <li class="active"><span class="page">Edit</span></li>
+              <% end %>
+              <li><span class="signout"
+                onclick="$('#signout').submit()">Delete</span></li>
+              <form method="post" action="/notes/<%= @note.id %>" id="signout">
+                <input type="hidden" name="_method" value="delete">
+              </form>
+            <% else %>
+              <li class="disabled"><a>Show</a></li>
+              <li class="disabled"><a>Edit</a></li>
+              <li class="disabled"><a>Delete</a></li>
+            <% end %>
+            <li>
+
+
+            </li>
+          </ul>
