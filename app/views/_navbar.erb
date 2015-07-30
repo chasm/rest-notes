@@ -10,15 +10,11 @@
           <a class="navbar-brand" href="#">Project name</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+          <% if session[:user_id].nil? %>
+            <%= partial :sign_in %>
+          <% else %>
+            <%= partial :sign_out %>
+          <% end %>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
