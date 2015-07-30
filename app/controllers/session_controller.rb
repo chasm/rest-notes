@@ -2,9 +2,15 @@
 
 # CREATE
 post '/session' do
-  session[:user_id] = 1
+  user = User.find_by_email(params[:user][:email])
 
-  redirect "/notes"
+  if user.password == params[:user][:password]
+    session[:user_id] = user.id
+    redirect "/notes"
+  else
+    redirect "/"
+  end
+
 end
 
 # DESTROY
