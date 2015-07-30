@@ -15,6 +15,8 @@ gem 'thin'
 gem 'activesupport'
 gem 'activerecord'
 
+gem 'autosize'
+
 gem 'eventmachine', '~> 1.0.6'
 
 gem 'rake'
