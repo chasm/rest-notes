@@ -4,11 +4,13 @@
             <% else %>
               <li><a href="/notes">List</a></li>
             <% end %>
+
             <% unless @notes or @note %>
               <li class="active"><span class="page">Add</span></li>
             <% else %>
               <li><a href="/notes/new">Add</a></li>
             <% end %>
+
             <% if @note %>
               <% if @prev or @next %>
                 <li class="active"><span class="page">Show</span></li>

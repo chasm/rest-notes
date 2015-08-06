@@ -8,6 +8,7 @@
     <title><%= @title %></title>
   </head>
   <body>
+    <p style="text-align: center; font-size: 40px"><%= session[:color] %></p>
     <%= partial :navbar %>
     <main class="container">
       <%= yield %>

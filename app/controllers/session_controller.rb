@@ -2,9 +2,9 @@
 
 # CREATE
 post '/session' do
-  user = User.find_by_email(params[:user][:email])
+  user = User.find_by_email(params[:email])
 
-  if user.password == params[:user][:password]
+  if user.password == params[:password]
     session[:user_id] = user.id
     redirect "/notes"
   else
