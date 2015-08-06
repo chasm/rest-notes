@@ -8,10 +8,10 @@ end
 
 # LIST
 get '/notes' do
-  @notes = Note.order :created_at
-  @title = "REST Notes"
+  notes = Note.order :created_at
 
-  erb :"/notes/index"
+  content_type 'application/json'
+  notes.to_json
 end
 
 # NEW (form)
