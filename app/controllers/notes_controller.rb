@@ -16,31 +16,35 @@ end
 
 # SHOW
 get '/notes/:id' do
-  notes = Note.order :created_at
-  @note = Note.find params[:id]
-  @title = "Show note :: REST Notes"
+  note = Note.find params[:id]
 
-  idx = notes.find_index @note
-
-  @prev = idx == 0 ? nil : notes[idx - 1]
-  @next = idx == (notes.length - 1) ? nil : notes[idx + 1]
-
-  erb :"/notes/show"
+  content_type 'application/json'
+  note.to_json
 end
 
 # CREATE
 post '/notes' do
-  note = Note.create params[:note]
-
-  redirect "/notes/#{note.id}"
+  request.body.rewind
+  body = JSON.parse request.body.read
+  if (note = Note.create body)
+    status 201
+    content_type 'application/json'
+    note.to_json
+  else
+    status 400
+  end
 end
 
 # UPDATE
 patch '/notes/:id' do
   note = Note.find params[:id]
-  note.update_attributes params[:note]
-
-  redirect "/notes/#{note.id}"
+  request.body.rewind
+  body = JSON.parse request.body.read
+  if (note and note.update_attributes body)
+    status 204
+  else
+    status 400
+  end
 end
 
 # DESTROY
@@ -48,5 +52,5 @@ delete '/notes/:id' do
   note = Note.find params[:id]
   note.destroy
 
-  redirect '/notes'
+  status 204
 end
