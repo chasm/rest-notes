@@ -1,7 +1,7 @@
 require 'glorify'
 
 before '/notes*' do
-  redirect '/' unless session[:user_id]
+  halt 401 unless session[:user_id]
 end
 
 # GET routes return HTML
