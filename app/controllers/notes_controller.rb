@@ -14,13 +14,6 @@ get '/notes' do
   notes.to_json
 end
 
-# NEW (form)
-get '/notes/new' do
-  @title = "Add note :: REST Notes"
-
-  erb :"/notes/new"
-end
-
 # SHOW
 get '/notes/:id' do
   notes = Note.order :created_at
@@ -34,16 +27,6 @@ get '/notes/:id' do
 
   erb :"/notes/show"
 end
-
-# EDIT (form)
-get '/notes/:id/edit' do
-  @note = Note.find params[:id]
-  @title = "Edit note :: REST Notes"
-
-  erb :"/notes/edit"
-end
-
-# NON-GET routes redirect to GET routes
 
 # CREATE
 post '/notes' do
