@@ -1,13 +1,16 @@
 require 'glorify'
 
-before '/notes*' do
+before '/api/*' do
   halt 401 unless session[:user_id]
 end
 
 # GET routes return HTML
+get '/notes' do
+  erb :index
+end
 
 # LIST
-get '/notes' do
+get '/api/notes' do
   notes = Note.order :created_at
 
   content_type 'application/json'
@@ -15,7 +18,7 @@ get '/notes' do
 end
 
 # SHOW
-get '/notes/:id' do
+get '/api/notes/:id' do
   note = Note.find params[:id]
 
   content_type 'application/json'
@@ -23,7 +26,7 @@ get '/notes/:id' do
 end
 
 # CREATE
-post '/notes' do
+post '/api/notes' do
   request.body.rewind
   body = JSON.parse request.body.read
   if (note = Note.create body)
@@ -36,7 +39,7 @@ post '/notes' do
 end
 
 # UPDATE
-patch '/notes/:id' do
+patch '/api/notes/:id' do
   note = Note.find params[:id]
   request.body.rewind
   body = JSON.parse request.body.read
@@ -48,7 +51,7 @@ patch '/notes/:id' do
 end
 
 # DESTROY
-delete '/notes/:id' do
+delete '/api/notes/:id' do
   note = Note.find params[:id]
   note.destroy
 
